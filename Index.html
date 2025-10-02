@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Game</title>
+  </head>
+  <body>
+    <h1>My First GitHub Game</h1>
+    <canvas id="game" width="400" height="300" style="border:1px solid black"></canvas>
+
+    <script>
+      const c = document.getElementById("game");
+      const ctx = c.getContext("2d");
+      let x = 50, y = 50, dx = 2, dy = 2;
+
+      function draw() {
+        ctx.clearRect(0,0,c.width,c.height);
+        ctx.fillStyle = "blue";
+        ctx.fillRect(x, y, 30, 30);
+        x += dx; y += dy;
+        if (x < 0 || x > c.width-30) dx *= -1;
+        if (y < 0 || y > c.height-30) dy *= -1;
+      }
+      setInterval(draw, 20);
+    </script>
+  </body>
+</html>
+
